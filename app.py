@@ -34,16 +34,4 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
-    """Show portfolio of stocks"""
-    info = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
-    if len(info):
-        total = info[0]["cash"]
-        shares = db.execute(
-            "SELECT symbol, amount FROM shares WHERE user_id = ?", session["user_id"])
-        for share in shares:
-            share["price"] = lookup(share["symbol"])["price"]
-            share["total"] = share["price"] * share["amount"]
-            total += share["total"]
-        return render_template("index.html", shares=shares, cash=info[0]["cash"], total=total)
-    else:
-        return render_template("login.html")
+    return render_template("index.hml")
