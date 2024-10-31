@@ -7,6 +7,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 # from helpers import apology, login_required, lookup, usd
 
+ from helpers import login_required
+
 # Configure application
 app = Flask(__name__)
 
@@ -33,5 +35,5 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 @login_required
-def index():
-    return render_template("index.hml")
+    def index():
+        return render_template("index.hml")
