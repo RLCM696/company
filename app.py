@@ -37,3 +37,10 @@ def after_request(response):
 @login_required
     def index():
         return render_template("index.hml")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """Log user in"""
+    session["user_id"] = 1
+    return redirect("/")
