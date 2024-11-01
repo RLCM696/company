@@ -91,17 +91,32 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     # Log user in
-    # Get all registered users
-    users = db.execute("SELECT * FROM users")
+    if request.method == "POST":
+        # Checking for an username
+        if not request.form.get("username"):
+            flash("Username required")
+            return render_template("login.html", username=request.form.get("username"), password=request.form.get("password"))
 
-    # If any user registered then the current one shuold register itself
-    if not len(users):
-        return redirect("/register")
+        # Checking for a password
+        if not request.form.get("password"):
+            flash("Pasword required")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
 
-    
+        # Checking the user data
+        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        if not len(user):
+            flash("The given username is not registered")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
 
-    session["user_id"] = 1
-    return redirect("/")
+
+        if request.form.get("username") in user["username"] and request.form
+
+    else:
+        # If there is no user registered then the current one shuold register itself
+        if not len(db.execute("SELECT * FROM users LIMIT 1")):
+            return redirect("/register")
+
+        return render_template("login.hmtl")
 
 
 @app.route("/logout")
