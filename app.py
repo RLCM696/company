@@ -47,7 +47,7 @@ def register():
     if request.method == "POST":
         if not request.form.get("username"):
             flash("Username required")
-            return render_template("/register")
+            return render_template("register.html")
 
         session["user_id"] = 1
 
