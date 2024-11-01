@@ -81,7 +81,7 @@ def register():
         except ValueError as e:
             # If an exception hapen is because the username is already taken
             flash("The given username is already registered")
-            return redirect("/register", username=request.form.get("username"), password=request.form.get("password"),
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"),
                             confirmation=request.form.get("confirmation"))
 
     else:
