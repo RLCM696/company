@@ -139,7 +139,7 @@ def logout():
     return redirect("/")
 
 
-@app.route("/contract" methods=["GET"])
+@app.route("/contract", methods=["GET", "POST"])
 def contract():
-    request.form
+    return render_template("contract.html", code=request.args["code"])
 
