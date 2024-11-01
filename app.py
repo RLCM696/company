@@ -64,14 +64,19 @@ def register():
             return redirect("/register")
 
         try:
+            # Insert the new user into the database
             db.execute("INSERT INTO users (name, hash) VALUES (?, ?)", request.form.get("username"),
                        generate_password_hash(request.form.get("password")))
-        if not request.form.get("confirmation") == request.form.get("password")
-            flash("Password confirmation and password fields must match")
+            session["user_id"] = db.execute("SELECT id FROM users WHERE name = ?", request.form.get("username"))
+            return render_template("register.html")
+
+        except ValueError as e:
+            # If an exception hapen is because the username is already taken
+            flash("The given username is already registered")
             return redirect("/register")
 
-    session["user_id"] = 1
-    return render_template("register.html")
+
+
 
 
 @app.route("/login", methods=["GET", "POST"])
