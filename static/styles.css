@@ -1,4 +1,9 @@
 /* Colors for brand */
+nav .navbar-brand
+{
+    vertical-align: text-bottom;
+}
+
 nav .navbar-brand .blue
 {
     color: #537fbe;
