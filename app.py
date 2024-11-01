@@ -36,9 +36,16 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
-    
+
 
     return render_template("index.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def login():
+    # Register an user
+    session["user_id"] = 1
+    return redirect("/")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -46,3 +53,5 @@ def login():
     """Log user in"""
     session["user_id"] = 1
     return redirect("/")
+
+
