@@ -9,24 +9,24 @@
     <table class=table>
         <thead>
             <tr>
-                <th class="text-start">Address</th>
-                <th class="text-end">Contractor</th>
-                <th class="text-end">Company</th>
-                <th class="text-end">Permission</th>
-                <th class="text-end">Status</th>
-                <th class="text-end">Description</th>
+                <th>Status</th>
+                <th>Company</th>
+                <th>Permission</th>
+                <th>Contractor</th>
+                <th>Address</th>
+                <th>Description</th>
             </tr>
         </thead>
 
         <tbody>
                 {% for contract in contracts: %}
                     <tr>
-                        <td class="text-start">{{ contract["address"] }}</td>
-                        <td class="text-end">{{ contract["contractor"] }}</td>
-                        <td class="text-end">{{ contract["company"] }}</td>
-                        <td class="text-end">{{ contract["permission"] }}</td>
-                        <td class="text-end">{{ contract["status"] }}</td>
-                        <td class="text-end">{{ contract["description"] }}</td>
+                        <td>{{ contract["status"] }}</td>
+                        <td>{{ contract["company"] }}</td>
+                        <td>{{ contract["permission"] }}</td>
+                        <td>{{ contract["contractor"] }}</td>
+                        <td>{{ contract["address"] }}</td>
+                        <td>{{ contract["description"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
