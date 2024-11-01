@@ -42,8 +42,11 @@ def index():
 
 
 @app.route("/register", methods=["GET", "POST"])
-def login():
-    # Register an user
+def register():
+    # Register user
+    if not request.form.get("username"):
+        
+
     session["user_id"] = 1
     return redirect("/")
 
@@ -53,5 +56,16 @@ def login():
     """Log user in"""
     session["user_id"] = 1
     return redirect("/")
+
+
+@app.route("/logout")
+def logout():
+    # Log user out
+
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return redirect("/")s
 
 
