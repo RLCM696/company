@@ -98,6 +98,8 @@ def login():
     if not len(users):
         return redirect("/register")
 
+    
+
     session["user_id"] = 1
     return redirect("/")
 
