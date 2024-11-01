@@ -50,10 +50,7 @@ def register():
             return redirect("/register")
 
         session["user_id"] = 1
-        redirect("/")
-
-    else:
-        return render_template("register.html")
+    return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
