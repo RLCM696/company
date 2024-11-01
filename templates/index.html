@@ -21,7 +21,7 @@
         <tbody>
                 {% for contract in contracts: %}
                     <tr>
-                        <td><a href="/contract" args>{{ contract["code"] }}</a></td>
+                        <td><a href="{{ url_for('contract') }}">{{ contract["code"] }}</a></td>
                         <td>{{ contract["status"] }}</td>
                         <td>{{ contract["permission"] }}</td>
                         <td>{{ contract["company"] }}</td>
