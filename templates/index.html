@@ -10,8 +10,8 @@
         <thead>
             <tr>
                 <th>Status</th>
-                <th>Company</th>
                 <th>Permission</th>
+                <th>Company</th>
                 <th>Contractor</th>
                 <th>Address</th>
                 <th>Description</th>
@@ -22,8 +22,8 @@
                 {% for contract in contracts: %}
                     <tr>
                         <td>{{ contract["status"] }}</td>
-                        <td>{{ contract["company"] }}</td>
                         <td>{{ contract["permission"] }}</td>
+                        <td>{{ contract["company"] }}</td>
                         <td>{{ contract["contractor"] }}</td>
                         <td>{{ contract["address"] }}</td>
                         <td>{{ contract["description"] }}</td>
