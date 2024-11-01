@@ -9,24 +9,24 @@
     <table class=table>
         <thead>
             <tr>
+                <th>Code</th>
                 <th>Status</th>
                 <th>Permission</th>
                 <th>Company</th>
                 <th>Contractor</th>
                 <th>Address</th>
-                <th>Description</th>
             </tr>
         </thead>
 
         <tbody>
                 {% for contract in contracts: %}
                     <tr>
+                        <td>{{ contract["code"] }}</td>
                         <td>{{ contract["status"] }}</td>
                         <td>{{ contract["permission"] }}</td>
                         <td>{{ contract["company"] }}</td>
                         <td>{{ contract["contractor"] }}</td>
                         <td>{{ contract["address"] }}</td>
-                        <td>{{ contract["description"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
