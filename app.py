@@ -65,7 +65,7 @@ def register():
 
         try:
             db.execute("INSERT INTO users (name, hash) VALUES (?, ?)", request.form.get("username"),
-                       )
+                       generate_password_hash(request.form.get("password")))
         if not request.form.get("confirmation") == request.form.get("password")
             flash("Password confirmation and password fields must match")
             return redirect("/register")
