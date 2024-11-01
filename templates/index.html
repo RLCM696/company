@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Portfolio
+    Contracts
 {% endblock %}
 
 {% block main %}
@@ -9,10 +9,12 @@
     <table class=table>
         <thead>
             <tr>
-                <th class="text-start">Symbol</th>
-                <th class="text-end">Shares</th>
-                <th class="text-end">Price</th>
-                <th class="text-end">TOTAL</th>
+                <th class="text-start">Address</th>
+                <th class="text-end">Contractor</th>
+                <th class="text-end">Company</th>
+                <th class="text-end">Permission</th>
+                <th class="text-end">Status</th>
+                <th class="text-end">Description</th>
             </tr>
         </thead>
 
@@ -28,16 +30,5 @@
                     </tr>
                 {% endfor%}
         </tbody>
-
-        <!-- <tfoot>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
-                <td class="border-0 text-end">{{cash | usd}}</td>
-            </tr>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
-                <td class="border-0 w-bold text-end">{{total | usd}}</td>
-            </tr>
-        </tfoot> -->
     </table>
 {% endblock %}
