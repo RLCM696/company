@@ -33,14 +33,13 @@ def after_request(response):
     return response
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 @login_required
 def index():
-    contracts = db.execute("""SELECT address, permission, description, status, contractors.name, companies.name FROM contracts
-               JOIN contractors ON contracts.contractor_id = contractors.id
-               JOIN companies ON contractors.company_id = companies.id""")
-    for contract in contracts:
-        contract["contractor"] = dictionary.pop(old_key)
+    contracts = db.execute("""SELECT address, permission, description, status,
+                           contractors.name AS contractor, companies.name AS company FROM contracts
+                           JOIN contractors ON contracts.contractor_id = contractors.id
+                           JOIN companies ON contractors.company_id = companies.id""")
 
     return render_template("index.html", contracts=contracts)
 
