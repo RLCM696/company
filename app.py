@@ -45,7 +45,8 @@ def index():
 def register():
     # Register user
     if not request.form.get("username"):
-        
+         flash("Username required")
+         return render_template("/register")
 
     session["user_id"] = 1
     return redirect("/")
@@ -66,6 +67,6 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return redirect("/")s
+    return redirect("/")
 
 
