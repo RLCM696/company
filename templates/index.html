@@ -21,8 +21,10 @@
                     <tr>
                         <td class="text-start">{{ contract["address"] }}</td>
                         <td class="text-end">{{ contract["contractor"] }}</td>
-                        <td class="text-end">{{ contract["company"] | usd }}</td>
-                        <td class="text-end">{{ contract["total"] | usd }}</td>
+                        <td class="text-end">{{ contract["company"] }}</td>
+                        <td class="text-end">{{ contract["permission"] }}</td>
+                        <td class="text-end">{{ contract["status"] }}</td>
+                        <td class="text-end">{{ contract["description"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
