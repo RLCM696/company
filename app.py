@@ -36,8 +36,6 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
-
-
     return render_template("index.html")
 
 
@@ -45,11 +43,34 @@ def index():
 def register():
     # Register user
     if request.method == "POST":
+        # Checking for an username
         if not request.form.get("username"):
             flash("Username required")
             return redirect("/register")
 
-        session["user_id"] = 1
+        # Checking for a password
+        if request.form.get("password")
+            flash("Pasword required")
+            return redirect("/register")
+
+        # Checking for a confirmation password
+        if request.form.get("confirmation")
+            flash("Password confirmation required")
+            return redirect("/register")
+
+        # Checking for a match between password and confirmation
+        if not request.form.get("confirmation") == request.form.get("password")
+            flash("Password confirmation and password fields must match")
+            return redirect("/register")
+
+        try:
+            db.execute("INSERT INTO users (name, hash) VALUES (?, ?)", request.form.get("username"),
+                       )
+        if not request.form.get("confirmation") == request.form.get("password")
+            flash("Password confirmation and password fields must match")
+            return redirect("/register")
+
+    session["user_id"] = 1
     return render_template("register.html")
 
 
