@@ -19,10 +19,10 @@
         <tbody>
                 {% for contract in contracts: %}
                     <tr>
-                        <td class="text-start">{{ share["symbol"] }}</td>
-                        <td class="text-end">{{ share["amount"] }}</td>
-                        <td class="text-end">{{ share["price"] | usd }}</td>
-                        <td class="text-end">{{ share["total"] | usd }}</td>
+                        <td class="text-start">{{ contract["address"] }}</td>
+                        <td class="text-end">{{ contract["contractor"] }}</td>
+                        <td class="text-end">{{ contract["company"] | usd }}</td>
+                        <td class="text-end">{{ contract["total"] | usd }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
