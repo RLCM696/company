@@ -120,7 +120,7 @@ def login():
         if not len(db.execute("SELECT * FROM users LIMIT 1")):
             return redirect("/register")
 
-        return render_template("login.html", username=request.form.get("username"), password=request.form.get("password"))
+        return render_template("login.html")
 
 
 @app.route("/logout")
