@@ -36,7 +36,9 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
-    db.execute("SELECT address, persmission, description, status, name,  FROM contracts ")
+    db.execute("""SELECT address, persmission, description, status, contractors.name, companies.name FROM contracts
+               JOIN contractors ON contracts.contractor_id = contractors.id
+               JOIN companies ON contractors.company_id = companies.id""")
     return render_template("index.html", contracts=contracts)
 
 
