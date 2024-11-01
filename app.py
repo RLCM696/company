@@ -54,7 +54,7 @@ def register():
             return redirect("/register")
 
         # Checking for a confirmation password
-        if nrequest.form.get("confirmation"):
+        if not request.form.get("confirmation"):
             flash("Password confirmation required")
             return redirect("/register")
 
@@ -66,7 +66,7 @@ def register():
         try:
             # Insert the new user into the database
             db.execute(
-                "INSERT INTO users (name, hash) VALUES (?, ?)",
+                "INSERT INTO users (username, hash) VALUES (?, ?)",
                 request.form.get("username"),
                 generate_password_hash(request.form.get("password"))
                 )
