@@ -46,22 +46,26 @@ def register():
         # Checking for an username
         if not request.form.get("username"):
             flash("Username required")
-            return redirect("/register")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"),
+                            confirmation=request.form.get("confirmation"))
 
         # Checking for a password
         if not request.form.get("password"):
             flash("Pasword required")
-            return redirect("/register")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"),
+                            confirmation=request.form.get("confirmation"))
 
         # Checking for a confirmation password
         if not request.form.get("confirmation"):
             flash("Password confirmation required")
-            return redirect("/register")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"),
+                            confirmation=request.form.get("confirmation"))
 
         # Checking for a match between password and confirmation
         if not request.form.get("confirmation") == request.form.get("password"):
             flash("Password confirmation and password fields must match")
-            return redirect("/register")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"),
+                            confirmation=request.form.get("confirmation"))
 
         try:
             # Insert the new user into the database
@@ -77,7 +81,8 @@ def register():
         except ValueError as e:
             # If an exception hapen is because the username is already taken
             flash("The given username is already registered")
-            return redirect("/register")
+            return redirect("/register", username=request.form.get("username"), password=request.form.get("password"),
+                            confirmation=request.form.get("confirmation"))
 
     else:
         return render_template("register.html")
