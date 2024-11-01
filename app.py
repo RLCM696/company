@@ -60,7 +60,7 @@ def login():
 
     # If any user registered then the current one shuold register itself
     if not len(users):
-        return render_template("/register")
+        return render_template("register.html")
 
     session["user_id"] = 1
     return redirect("/")
