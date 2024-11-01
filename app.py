@@ -54,7 +54,14 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Log user in"""
+    # Log user in
+    # Get all registered users
+    users = db.execute("SELECT * FROM users")
+
+    # If any user registered then the current one shuold register itself
+    if not len(users):
+        return render_template("/register")
+
     session["user_id"] = 1
     return redirect("/")
 
