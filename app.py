@@ -44,12 +44,15 @@ def index():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     # Register user
-    if not request.form.get("username"):
-         flash("Username required")
-         return render_template("/register")
+    if request.method == "POST":
+        if not request.form.get("username"):
+            flash("Username required")
+            return render_template("/register")
 
-    session["user_id"] = 1
-    return redirect("/")
+        session["user_id"] = 1
+
+    else:
+        return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -60,7 +63,7 @@ def login():
 
     # If any user registered then the current one shuold register itself
     if not len(users):
-        return render_template("register.html")
+        return redirect("/register")
 
     session["user_id"] = 1
     return redirect("/")
