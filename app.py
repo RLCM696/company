@@ -141,5 +141,5 @@ def logout():
 
 @app.route("/contract", methods=["GET", "POST"])
 def contract():
-    return render_template("contract.html", code=request.args["code"])
+    return render_template("contract.html", code='A')
 
