@@ -105,18 +105,22 @@ def login():
         # Checking the user data
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         if not len(user):
-            flash("The given username is not registered")
+            flash("The given username or password are not registered")
             return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
 
+        if not check_password_hash(user[0]["hash"], request.form.get("password")):
+            flash("The given username or password are not registered")
+            return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
 
-        if request.form.get("username") in user["username"] and request.form
+        session["user_id"] = user[0]["id"]
+        return redirect("/")
 
     else:
         # If there is no user registered then the current one shuold register itself
         if not len(db.execute("SELECT * FROM users LIMIT 1")):
             return redirect("/register")
 
-        return render_template("login.hmtl")
+        return render_template("login.html", username=request.form.get("username"), password=request.form.get("password"))
 
 
 @app.route("/logout")
