@@ -5,6 +5,7 @@ CREATE TABLE "users" (
 	hash	    TEXT NOT NULL,
 	PRIMARY KEY(id)
 );
+CREATE UNIQUE INDEX username ON users(name);
 
 -- Create table clients
 CREATE TABLE clients (
@@ -12,6 +13,7 @@ CREATE TABLE clients (
 	name	    TEXT NOT NULL,
 	PRIMARY KEY(id)
 );
+CREATE UNIQUE INDEX clientname ON clients(name);
 
 --Create table for contractors
 CREATE TABLE contractors (
