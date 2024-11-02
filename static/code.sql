@@ -1,5 +1,5 @@
 -- Create table for users
-CREATE TABLE Users (
+CREATE TABLE users (
 	id	        INTEGER NOT NULL AUTOINCREMENT,
 	name	    TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
@@ -8,20 +8,19 @@ CREATE TABLE Users (
 CREATE UNIQUE INDEX username ON users(name);
 
 -- Create a table for contracts
-CREATE TABLE ClientContractors (
+CREATE TABLE clients (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    company_id      INTEGER NOT NULL,
-    name            TEXT,
-    email           TEXT NOT NULL,
-    phone           TEXT,
+    company         INTEGER NOT NULL,
+    name            TEXT NOT NULL,
+    phone           TEXT NOT NULL,
+    email           TEXT,
     address         TEXT,
     city            TEXT,
     state           TEXT,
     zip_code        TEXT,
     country         TEXT,
-    role            TEXT DEFAULT 'client'
 );
-
+CREATE UNIQUE INDEX clientphone ON clients(phone);
 
 -- Create a table for contracts
 CREATE TABLE ClientContractors (
