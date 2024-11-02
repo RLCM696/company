@@ -1,3 +1,12 @@
+-- Create table for users
+CREATE TABLE "users" (
+	"id"	INTEGER NOT NULL,
+	"username"	TEXT NOT NULL,
+	"hash"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+
 -- Create table for Wiring and Cabling
 CREATE TABLE WiringCabling (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
