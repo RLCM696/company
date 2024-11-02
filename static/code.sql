@@ -1,9 +1,38 @@
 -- Create table for users
 CREATE TABLE "users" (
-	"id"	INTEGER NOT NULL,
-	"username"	TEXT NOT NULL,
-	"hash"	TEXT NOT NULL,
-	PRIMARY KEY("id" AUTOINCREMENT)
+	id	        INTEGER NOT NULL AUTOINCREMENT,
+	username	TEXT NOT NULL,
+	hash	    TEXT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+-- Create table clients
+CREATE TABLE clients (
+	id	        INTEGER NOT NULL AUTOINCREMENT,
+	name	    TEXT NOT NULL,
+	PRIMARY KEY(id)
+);
+
+--Create table for contractors
+CREATE TABLE contractors (
+	id	        INTEGER NOT NULL AUTOINCREMENT,
+	name	    TEXT NOT NULL,
+	email	    TEXT,
+	phone	    TEXT NOT NULL,
+	client_id	INTEGER NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(client_id) REFERENCES clients(id)
+);
+
+-- Create table for contracts
+CREATE TABLE contracts (
+	"code"	INTEGER NOT NULL UNIQUE,
+	"contractor_id"	INTEGER NOT NULL,
+	"address"	TEXT NOT NULL,
+	"permission"	TEXT,
+	"status"	TEXT NOT NULL,
+	PRIMARY KEY("code" AUTOINCREMENT),
+	FOREIGN KEY("contractor_id") REFERENCES "contractors"("id")
 );
 
 
