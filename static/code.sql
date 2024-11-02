@@ -1,11 +1,50 @@
 -- Create table for users
-CREATE TABLE "users" (
+CREATE TABLE Users (
 	id	        INTEGER NOT NULL AUTOINCREMENT,
 	username	TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
 	PRIMARY KEY(id)
 );
 CREATE UNIQUE INDEX username ON users(name);
+
+-- Create a table for contracts
+CREATE TABLE ClientContractors (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_id      INTEGER NOT NULL,
+    name            TEXT,
+    email           TEXT NOT NULL,
+    phone           TEXT,
+    address         TEXT,
+    city            TEXT,
+    state           TEXT,
+    zip_code        TEXT,
+    country         TEXT,
+    role            TEXT DEFAULT 'client'
+);
+
+
+-- Create a table for contracts
+CREATE TABLE ClientContractors (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_id      INTEGER NOT NULL,
+    name            TEXT,
+    email           TEXT NOT NULL,
+    phone           TEXT,
+    address         TEXT,
+    city            TEXT,
+    state           TEXT,
+    zip_code        TEXT,
+    country         TEXT,
+    role            TEXT DEFAULT 'client'
+);
+
+
+
+
+
+
+
+
 
 -- Create table clients
 CREATE TABLE clients (
@@ -15,32 +54,17 @@ CREATE TABLE clients (
 );
 CREATE UNIQUE INDEX clientname ON clients(name);
 
---Create table for contractors
-CREATE TABLE contractors (
-	id	        INTEGER NOT NULL AUTOINCREMENT,
-	name	    TEXT NOT NULL,
-	email	    TEXT,
-	phone	    TEXT NOT NULL,
-	client_id	INTEGER NOT NULL,
-	PRIMARY KEY(id),
-	FOREIGN KEY(client_id) REFERENCES clients(id)
-);
+-- --Create table for contractors
+-- CREATE TABLE contractors (
+-- 	id	        INTEGER NOT NULL AUTOINCREMENT,
+-- 	name	    TEXT NOT NULL,
+-- 	email	    TEXT,
+-- 	phone	    TEXT NOT NULL,
+-- 	client_id	INTEGER NOT NULL,
+-- 	PRIMARY KEY(id),
+-- 	FOREIGN KEY(client_id) REFERENCES clients(id)
+-- );
 
--- Create a table for contracts
-CREATE TABLE ClientCompanies (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    company_name    TEXT NOT NULL,
-    contact_name    TEXT,
-    contact_email   TEXT NOT NULL,
-    contact_phone   TEXT,
-    address         TEXT,
-    city            TEXT,
-    state           TEXT,
-    zip_code        TEXT,
-    country         TEXT,
-    industry        TEXT,
-    role            TEXT DEFAULT 'client'
-);
 
 -- Create table for contracts
 CREATE TABLE contracts (
