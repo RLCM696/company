@@ -26,6 +26,22 @@ CREATE TABLE contractors (
 	FOREIGN KEY(client_id) REFERENCES clients(id)
 );
 
+-- Create a table for contracts
+CREATE TABLE ClientCompanies (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_name    TEXT NOT NULL,
+    contact_name    TEXT,
+    contact_email   TEXT NOT NULL,
+    contact_phone   TEXT,
+    address         TEXT,
+    city            TEXT,
+    state           TEXT,
+    zip_code        TEXT,
+    country         TEXT,
+    industry        TEXT,
+    role            TEXT DEFAULT 'client'
+);
+
 -- Create table for contracts
 CREATE TABLE contracts (
 	"code"	INTEGER NOT NULL UNIQUE,
