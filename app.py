@@ -142,5 +142,6 @@ def logout():
 @app.route("/contract", methods=["GET", "POST"])
 def contract():
     if request.method == "GET":
+        
         return render_template("contract.html", code=request.args.get('code'))
 
