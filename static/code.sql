@@ -1,7 +1,7 @@
 -- Create table for users
 CREATE TABLE Users (
 	id	        INTEGER NOT NULL AUTOINCREMENT,
-	username	TEXT NOT NULL,
+	name	    TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
 	PRIMARY KEY(id)
 );
