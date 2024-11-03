@@ -144,7 +144,7 @@ def contract():
         project = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
                              Projects.id, Clients.name AS client FROM Projects
                              JOIN Clients ON Projects.client_id = Clients.id
-                             WHERE Projects.id = ?""", request.args.get('project'))
+                             WHERE Projects.id = ?""", request.args.get('project'))[0]
 
         tasks = db.execute("""SELECT start_date, due_date, ProjectTasks.status, ProjectTasks.id, Tasks.name AS task,
                            Tasks.description, Stages.name AS stage, Teams.name AS team, Employees.first_name AS lead
