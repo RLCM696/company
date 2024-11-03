@@ -109,6 +109,52 @@ CREATE TABLE
         FOREIGN KEY (team_id) REFERENCES Teams (id)
     );
 
+-- Insert exmaple data
+-- Insert data into Users
+INSERT INTO Users (name, hash) VALUES
+('admin', 'hashed_password_1'),
+('user1', 'hashed_password_2');
+
+-- Insert data into Clients
+INSERT INTO Clients (name, phone, email, company) VALUES
+('ACME Corporation', '123-456-7890', 'info@acme.com', 'ACME Corporation'),
+('Globex Corporation', '098-765-4321', 'contact@globex.com', 'Globex Corporation');
+
+-- Insert data into Employees
+INSERT INTO Employees (first_name, last_name, phone, email, address, zip_code, hire_date, job_title, salary, status) VALUES
+('John', 'Doe', '123-456-7890', 'john.doe@example.com', '123 Main St', '62701', '2023-01-15', 'Electrician', 55000.00, 'Active'),
+('Jane', 'Smith', '098-765-4321', 'jane.smith@example.com', '456 Elm St', '62702', '2022-07-10', 'Project Manager', 70000.00, 'Active');
+
+-- Insert data into Teams
+INSERT INTO Teams (name, lead_id, member_count, description) VALUES
+('Installation Team Alpha', 1, 5, 'Responsible for all wiring and installation tasks'),
+('Inspection Team Beta', 2, 3, 'Handles all safety and final inspections');
+
+-- Insert data into Projects
+INSERT INTO Projects (status, permission, client_id, address, city, zip_code, state, DATE) VALUES
+('In Progress', 'Permit123', 1, '789 Oak St', 'Springfield', '62703', 'IL', '2024-11-02'),
+('Completed', 'Permit456', 2, '456 Pine St', 'Shelbyville', '62704', 'IL', '2024-11-03');
+
+-- Insert data into Stages
+INSERT INTO Stages (name, description) VALUES
+('Planning', 'Initial project planning and design phase'),
+('Execution', 'Project execution and construction phase');
+
+-- Insert data into Tasks
+INSERT INTO Tasks (stage_id, name, description) VALUES
+(1, 'Plan electrical layout', 'Design the layout for electrical wiring and components'),
+(2, 'Install main breaker panel', 'Install the main electrical panel for the house');
+
+-- Insert data into ProjectTasks
+INSERT INTO ProjectTasks (task_id, project_id, team_id, start_date, due_date, status) VALUES
+(1, 1, 1, '2024-11-02', '2024-11-05', 'Not Started'),
+(2, 1, 1, '2024-11-06', '2024-11-10', 'Not Started');
+
+
+
+
+
+-- Not used yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -- Create table for Wiring and Cabling
 CREATE TABLE
     WiringCabling (
