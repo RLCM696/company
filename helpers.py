@@ -18,6 +18,8 @@ def login_required(f):
 
     return decorated_function
 
-def lenght(value):
+def pending(value):
     # Return the lenght of a list
-    return len(value)
+    count = 0
+    count ++ if val["status"] != "Completed" for val in value
+    return
