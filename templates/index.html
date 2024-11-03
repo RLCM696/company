@@ -22,7 +22,7 @@
         <tbody>
                 {% for project in projects: %}
                     <tr>
-                        <td><a href="/project?code={{project['id']}}">{{ project["id"] }}</a></td>
+                        <td><a href="/project?project={{project['id']}}">{{ project["id"] }}</a></td>
                         <td>{{ project["status"] }}</td>
                         <td>{{ project["permission"] }}</td>
                         <td>{{ project["client"] }}</td>
