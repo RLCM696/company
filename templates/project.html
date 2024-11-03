@@ -1,9 +1,38 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Contracts
+    Tasks
 {% endblock %}
 
 {% block main %}
-    {{code}}
+    <h2>Project: {{project["id"]}}</h2>
+    <div class="table-responsive"></div>
+    <table class=table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Stage</th>
+                <th>Tasks</th>
+                <th>Team</th>
+                <th>In charge</th>
+                <th>Address</th>
+                <th>Issue</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                {% for project in projects: %}
+                    <tr>
+                        <td><a href="/project?project={{project['id']}}">{{ project["id"] }}</a></td>
+                        <td>{{ project["status"] }}</td>
+                        <td>{{ project["permission"] }}</td>
+                        <td>{{ project["client"] }}</td>
+                        <td>{{ project["company"] }}</td>
+                        <td>{{ project["address"] + ", " + project["zip_code"] + ", " +
+                            project["city"] + ", " + project["state"] }}</td>
+                        <td>{{ project["date"] }}</td>
+                    </tr>
+                {% endfor%}
+        </tbody>
+    </table>
 {% endblock %}
