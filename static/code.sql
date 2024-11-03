@@ -77,7 +77,7 @@ CREATE TABLE
     Stages (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        description TEXT,
+        description TEXT
     );
 
 CREATE UNIQUE INDEX stages_name ON Stages (name);
