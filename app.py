@@ -145,12 +145,15 @@ def contract():
                              Projects.id, Clients.name AS client FROM Projects
                              JOIN Clients ON Projects.client_id = Clients.id
                              WHERE Projects.id = ?""", request.args.get('project'))
-        tasks = db.execute("""SELECT start, due, status, ProjectTasks.id FROM ProjectTasks
-                           Tasks.name AS task, Tasks.decription, Stages.name AS stage, Teams.name AS team,
-                           Employees.name AS lead FROM ProjectTasks
+
+        tasks = db.execute("""SELECT start_date, due_date, ProjectTasks.status, ProjectTasks.id, Tasks.name AS task,
+                           Tasks.description, Stages.name AS stage, Teams.name AS team, Employees.first_name AS lead
+                           FROM ProjectTasks
                            JOIN Tasks ON ProjectTasks.task_id = Tasks.id
+                           JOIN Stages ON Tasks.stage_id = Stages.id
                            JOIN Teams ON ProjectTasks.team_id = Teams.id
                            JOIN Employees ON Teams.lead_id = Employees.id
                            WHERE project_id = ?""", request.args.get('project'))
+
         return render_template("project.html", project = project, tasks = tasks)
 
