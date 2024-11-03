@@ -13,8 +13,7 @@ CREATE TABLE clients (
     name            TEXT NOT NULL,
     phone           TEXT NOT NULL,
     email           TEXT,
-    company         INTEGER NOT NULL,
-    city            TEXT,
+    company         TEXT
 );
 CREATE UNIQUE INDEX clientphone ON clients(phone);
 
