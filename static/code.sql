@@ -133,7 +133,7 @@ INSERT INTO Stages (name, description) VALUES
 ('Trim', 'Outlets, switches and lighting installation phase');
 
 -- Insert data into Tasks
-INSERT INTO Tasks (id, stage_id, name, description) VALUES
+INSERT INTO Tasks (stage_id, name, description) VALUES
 (1, 'Install electrical boxes', 'Design the layout for electrical wiring and components'),
 (1, 'Install main breaker panel', 'Install the main electrical panel for the house'),
 (2, 'Install lighting features', 'Install all the lights of the house'),
