@@ -122,8 +122,8 @@ INSERT INTO Clients (name, phone, email, company) VALUES
 
 -- Insert data into Employees
 INSERT INTO Employees (first_name, last_name, phone, email, address, zip_code, hire_date, job_title, salary, status) VALUES
-('John', 'Doe', '123-456-7890', 'john.doe@example.com', '123 Main St', '62701', '2023-01-15', 'Electrician', 55000.00, 'Active'),
-('Jane', 'Smith', '098-765-4321', 'jane.smith@example.com', '456 Elm St', '62702', '2022-07-10', 'Electrician', 70000.00, 'Active');
+('John', 'Doe', '123-456-7890', 'john.doe@example.com', '123 Main St', '62701', '01-15-2023', 'Electrician', 55000.00, 'Active'),
+('Jane', 'Smith', '098-765-4321', 'jane.smith@example.com', '456 Elm St', '62702', '07-10-2022', 'Electrician', 70000.00, 'Active');
 
 -- Insert data into Teams
 INSERT INTO Teams (name, lead_id, member_count, description) VALUES
@@ -132,23 +132,25 @@ INSERT INTO Teams (name, lead_id, member_count, description) VALUES
 
 -- Insert data into Projects
 INSERT INTO Projects (status, permission, client_id, address, city, zip_code, state, DATE) VALUES
-('In Progress', 'Permit123', 1, '789 Oak St', 'Springfield', '62703', 'IL', '2024-11-02'),
-('Completed', 'Permit456', 2, '456 Pine St', 'Shelbyville', '62704', 'IL', '2024-11-03');
+('In Progress', 'Permit123', 1, '789 Oak St', 'Springfield', '62703', 'IL', '02-11-2024'),
+('Completed', 'Permit456', 2, '456 Pine St', 'Shelbyville', '62704', 'IL', '03-08-2024');
 
 -- Insert data into Stages
 INSERT INTO Stages (name, description) VALUES
-('Planning', 'Initial project planning and design phase'),
-('Execution', 'Project execution and construction phase');
+('Roof', 'Wiring cable project phase'),
+('Trim', 'Outlets, switches and lighting installation phase');
 
 -- Insert data into Tasks
 INSERT INTO Tasks (stage_id, name, description) VALUES
-(1, 'Plan electrical layout', 'Design the layout for electrical wiring and components'),
-(2, 'Install main breaker panel', 'Install the main electrical panel for the house');
+(1, 'Install electrical boxes', 'Design the layout for electrical wiring and components'),
+(1, 'Install main breaker panel', 'Install the main electrical panel for the house'),
+(2, 'Install lighting features', 'Install all the lights of the house'),
+(2, 'Install wall plates', 'Install the plates for all electrical outlets and switches of the house');
 
 -- Insert data into ProjectTasks
 INSERT INTO ProjectTasks (task_id, project_id, team_id, start_date, due_date, status) VALUES
-(1, 1, 1, '2024-11-02', '2024-11-05', 'Not Started'),
-(2, 1, 1, '2024-11-06', '2024-11-10', 'Not Started');
+(1, 1, 1, '02-11-2024', '05-11-2024', 'Not Started'),
+(2, 1, 1, '06-11-2024', '10-11-2024', 'Not Started');
 
 
 
