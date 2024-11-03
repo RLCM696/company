@@ -1,6 +1,6 @@
 -- Create table for users
 CREATE TABLE users (
-	id	        INTEGER NOT NULL AUTOINCREMENT,
+	id	        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	name	    TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
 	PRIMARY KEY(id)
@@ -9,7 +9,7 @@ CREATE UNIQUE INDEX username ON users(name);
 
 -- Create a table for clients
 CREATE TABLE clients (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    id              INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     name            TEXT NOT NULL,
     phone           TEXT NOT NULL,
     email           TEXT,
@@ -18,54 +18,11 @@ CREATE TABLE clients (
 CREATE UNIQUE INDEX clientphone ON clients(phone);
 CREATE UNIQUE INDEX clientemail ON clients(email);
 
--- Create a table for contracts
+-- Create table for jobs
 CREATE TABLE jobs (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    company_id      INTEGER NOT NULL,
-    name            TEXT,
-    email           TEXT NOT NULL,
-    phone           TEXT,
-    address         TEXT,
-    city            TEXT,
-    state           TEXT,
-    zip_code        TEXT,
-    country         TEXT,
-    role            TEXT DEFAULT 'client'
-);
-
-
-
-
-
-
-
-
-
--- Create table clients
-CREATE TABLE clients (
-	id	        INTEGER NOT NULL AUTOINCREMENT,
-	name	    TEXT NOT NULL,
-	PRIMARY KEY(id)
-);
-CREATE UNIQUE INDEX clientname ON clients(name);
-
--- --Create table for contractors
--- CREATE TABLE contractors (
--- 	id	        INTEGER NOT NULL AUTOINCREMENT,
--- 	name	    TEXT NOT NULL,
--- 	email	    TEXT,
--- 	phone	    TEXT NOT NULL,
--- 	client_id	INTEGER NOT NULL,
--- 	PRIMARY KEY(id),
--- 	FOREIGN KEY(client_id) REFERENCES clients(id)
--- );
-
-
--- Create table for contracts
-CREATE TABLE contracts (
-	"code"	INTEGER NOT NULL UNIQUE,
-	"contractor_id"	INTEGER NOT NULL,
-	"address"	TEXT NOT NULL,
+	code	        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	client_id	    INTEGER NOT NULL,
+	address	        TEXT NOT NULL,
 	"permission"	TEXT,
 	"status"	TEXT NOT NULL,
 	PRIMARY KEY("code" AUTOINCREMENT),
