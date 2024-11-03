@@ -20,14 +20,24 @@ CREATE UNIQUE INDEX clientemail ON clients(email);
 
 -- Create table for jobs
 CREATE TABLE jobs (
-	code	        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	client_id	    INTEGER NOT NULL,
 	address	        TEXT NOT NULL,
 	"permission"	TEXT,
 	"status"	TEXT NOT NULL,
-	PRIMARY KEY("code" AUTOINCREMENT),
-	FOREIGN KEY("contractor_id") REFERENCES "contractors"("id")
+	FOREIGN KEY(client_id) REFERENCES clients(id)
 );
+
+CREATE TABLE Jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_id INTEGER, start_date DATE,
+    job_title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    end_date DATE, status TEXT,
+    assigned_to TEXT,
+    estimated_cost REAL,
+    actual_cost REAL,
+    FOREIGN KEY (client_id) REFERENCES ClientCompanies(id) );
 
 
 -- Create table for Wiring and Cabling
