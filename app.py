@@ -37,9 +37,8 @@ def after_request(response):
 @login_required
 def index():
     contracts = db.execute("""SELECT id, address, permission, status,
-                           Clients.name AS client, companies.name AS company FROM Projects
-                           JOIN Clients ON contracts.contractor_id = contractors.id
-                           JOIN companies ON contractors.company_id = companies.id""")
+                           Clients.name AS client, Clients.company AS company FROM Projects
+                           JOIN Clients ON Projects.client_id = Clients.id""")
 
     return render_template("index.html", contracts=contracts)
 
