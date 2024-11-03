@@ -6,7 +6,7 @@
 
 {% block main %}
 <div class="container-fluid">
-    <div class="card row bg-light">
+    <div class="row">
         <div class="col">
             <h6 style="text-align: center">Project # {{project["id"]}}</h6>
             <div>
@@ -15,67 +15,61 @@
             </div>
         </div>
         <div class="col">
-            <div class="card-body table-responsive">
-                <table class="table-borderless">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-start">Status</th>
-                            <td class="text-end">{{project["status"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Permission</th>
-                            <td class="text-end">{{project["permission"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-start">Issue</th>
-                            <td class="text-end">{{project["date"]}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table-borderless">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="text-start">Status</th>
+                        <td class="text-end">{{project["status"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-start">Permission</th>
+                        <td class="text-end">{{project["permission"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-start">Issue</th>
+                        <td class="text-end">{{project["date"]}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col">
-            <div class="card-body table-responsive">
-                <table class="table">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Contact</th>
-                            <td>{{project["client"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Company</th>
-                            <td>{{project["company"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Phone</th>
-                            <td>{{project["phone"]}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table-borderless">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Contact</th>
+                        <td>{{project["client"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Company</th>
+                        <td>{{project["company"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Phone</th>
+                        <td>{{project["phone"]}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col">
-            <div class="card-body table-responsive">
-                <table class="table">
-                    <thead></thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Address</th>
-                            <td>{{project["address"]}}, {{project["city"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">State</th>
-                            <td>{{project["state"]}}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Zip code</th>
-                            <td>{{project["zip_code"]}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table-borderless">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Address</th>
+                        <td>{{project["address"]}}, {{project["city"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">State</th>
+                        <td>{{project["state"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Zip code</th>
+                        <td>{{project["zip_code"]}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
