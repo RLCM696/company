@@ -17,9 +17,7 @@ CREATE TABLE
         email TEXT,
         company TEXT
     );
-
 CREATE UNIQUE INDEX clients_phone ON Clients (phone);
-
 CREATE UNIQUE INDEX clients_email ON Clients (email);
 
 -- Create table for person
@@ -37,9 +35,7 @@ CREATE TABLE
         salary REAL NOT NULL,
         status TEXT
     );
-
 CREATE UNIQUE INDEX employees_phone ON Employees (phone);
-
 CREATE UNIQUE INDEX employees_email ON Employees (email);
 
 -- Create the table for storing team information
@@ -52,7 +48,6 @@ CREATE TABLE
         description TEXT,
         FOREIGN KEY (lead_id) REFERENCES Employees (id)
     );
-
 CREATE UNIQUE INDEX teams_name ON Teams (name);
 
 -- Create table for projects
@@ -69,7 +64,6 @@ CREATE TABLE
         DATE TEXT NOT NULL,
         FOREIGN KEY (client_id) REFERENCES Clients (id)
     );
-
 CREATE UNIQUE INDEX projects_permission ON Projects (permission);
 
 -- Create table for Stages
@@ -79,7 +73,6 @@ CREATE TABLE
         name TEXT NOT NULL,
         description TEXT
     );
-
 CREATE UNIQUE INDEX stages_name ON Stages (name);
 
 -- Create table for Tasks
@@ -91,7 +84,6 @@ CREATE TABLE
         description TEXT,
         FOREIGN KEY (stage_id) REFERENCES Stages (id)
     );
-
 CREATE UNIQUE INDEX tasks_name ON Tasks (name);
 
 -- Create the table for storing task information for specific projects
@@ -141,7 +133,7 @@ INSERT INTO Stages (name, description) VALUES
 ('Trim', 'Outlets, switches and lighting installation phase');
 
 -- Insert data into Tasks
-INSERT INTO Tasks (stage_id, name, description) VALUES
+INSERT INTO Tasks (id, stage_id, name, description) VALUES
 (1, 'Install electrical boxes', 'Design the layout for electrical wiring and components'),
 (1, 'Install main breaker panel', 'Install the main electrical panel for the house'),
 (2, 'Install lighting features', 'Install all the lights of the house'),
