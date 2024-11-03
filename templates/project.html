@@ -6,12 +6,13 @@
 
 {% block main %}
 <div class="container-fluid">
-    <div class="row bg-light">
-        <div class="col d-flex justify-content-center">
-            <div class="card m-3">
+    <div class="row">
+        <div class="col d-flex">
+            <div class="card m-3 bg-ligth">
                 <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
-                <div class="task-amount p-2">
-                    <h5>{{len(tasks)}}</h5>
+                <div class="task-amount m-5 ">
+                    <h1>Tasks</h1>
+                    <h2>{{tasks | lenght }}</h5>
                 </div>
                 <div class="card-body table-responsive">
                     <table class="table">

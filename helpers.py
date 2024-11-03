@@ -17,3 +17,7 @@ def login_required(f):
         return f(*args, **kwargs)
 
     return decorated_function
+
+def lenght(value):
+    # Return the lenght of a list
+    return len(value)
