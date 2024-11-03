@@ -19,12 +19,22 @@ CREATE UNIQUE INDEX clientphone ON clients(phone);
 CREATE UNIQUE INDEX clientemail ON clients(email);
 
 -- Create table for person
-CREATE TABLE emplo (
+CREATE TABLE employees (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	name     	    INTEGER NOT NULL,
+    first_name      TEXT NOT NULL,
+    last_name       TEXT NOT NULL,
 	phone           TEXT NOT NULL,
-    email           TEXT,
+    email           TEXT NOT NULL,
+    address         TEXT NOT NULL,
+    zip_code        TEXT NOT NULL,
+    hire_date       DATE NOT NULL,
+    job_title       TEXT NOT NULL,
+    salary          REAL NOT NULL,
+    status          TEXT
 );
+CREATE UNIQUE INDEX employeesphone ON employees(phone);
+CREATE UNIQUE INDEX employeesemail ON employees(email);
+
 
 
 -- Create table for jobs
