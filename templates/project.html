@@ -5,7 +5,19 @@
 {% endblock %}
 
 {% block main %}
-    <div class="head bg-light">
+<div class="card" style="width: 18rem;">
+    <p class="card-title"></p>
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+
+
+<div class="head bg-light">
         <h2 class="text-start">Project</h2>
         <hr>
         <p class="text-start">Project # {{ project["id"] }}: For ({{project["company"]}}) at {{project["address"]}},
