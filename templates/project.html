@@ -7,14 +7,14 @@
 {% block main %}
 <div class="container-fluid">
     <div class="row">
-        <div>
+        <div class="col">
             <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
             <div class="task-amount m-5 ">
                 <h1>To-dos</h1>
                 <h2>{{tasks | pending }}</h5>
             </div>
         </div>
-        <div>
+        <div class="col">
             <div class="card-body table-responsive">
                 <table class="table">
                     <thead></thead>
@@ -35,7 +35,7 @@
                 </table>
             </div>
         </div>
-        <div>
+        <div class="col">
             <div class="card-body table-responsive">
                 <table class="table">
                     <thead></thead>
