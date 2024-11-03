@@ -10,10 +10,10 @@ CREATE UNIQUE INDEX username ON users(name);
 -- Create a table for contracts
 CREATE TABLE clients (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    company         INTEGER NOT NULL,
     name            TEXT NOT NULL,
     phone           TEXT NOT NULL,
     email           TEXT,
+    company         INTEGER NOT NULL,
     address         TEXT,
     city            TEXT,
     state           TEXT,
