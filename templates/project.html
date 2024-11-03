@@ -55,11 +55,22 @@
         </div>
     </div>
 
-<div class="head bg-light">
-        <h2 class="text-start">Project</h2>
-        <hr>
-        <p class="text-start">Project # {{ project["id"] }}: For ({{project["company"]}}) at {{project["address"]}},
-            {{project["city"]}}, {{project["state"]}}, {{project["zip_code"]}} </p>
+    <div class="container-fluid">
+        <div class="row bg-light">
+            <div class="col d-flex justify-content-center">
+                <div class="card mt-3" style="width:200px">
+                    <img class="card-img-top" src="img/character_${key}.png" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">${characters[key][0]}</h4>
+                        <div class="card-text mb-2" style="height:50px">
+                            <p><i>${characters[key][1]}</i></p>
+                        </div>
+                        <a href="${key}.html" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
     <div class="table-responsive">
