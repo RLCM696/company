@@ -1,25 +1,25 @@
 -- Create table for users
-CREATE TABLE users (
+CREATE TABLE Users (
 	id	        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	name	    TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
 	PRIMARY KEY(id)
 );
-CREATE UNIQUE INDEX username ON users(name);
+CREATE UNIQUE INDEX users_name ON Users(name);
 
 -- Create a table for clients
-CREATE TABLE clients (
+CREATE TABLE Clients (
     id              INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     name            TEXT NOT NULL,
     phone           TEXT NOT NULL,
     email           TEXT,
     company         TEXT
 );
-CREATE UNIQUE INDEX clientphone ON clients(phone);
-CREATE UNIQUE INDEX clientemail ON clients(email);
+CREATE UNIQUE INDEX clients_phone ON Clients(phone);
+CREATE UNIQUE INDEX clients_email ON Clients(email);
 
 -- Create table for person
-CREATE TABLE employees (
+CREATE TABLE Employees (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     first_name      TEXT NOT NULL,
     last_name       TEXT NOT NULL,
@@ -32,31 +32,30 @@ CREATE TABLE employees (
     salary          REAL NOT NULL,
     status          TEXT
 );
-CREATE UNIQUE INDEX employeesphone ON employees(phone);
-CREATE UNIQUE INDEX employeesemail ON employees(email);
+CREATE UNIQUE INDEX employees_phone ON Employees(phone);
+CREATE UNIQUE INDEX employees_email ON Employees(email);
 
 -- Create the table for storing team information
 CREATE TABLE WorkTeams (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    team_name TEXT NOT NULL,
-    team_lead TEXT NOT NULL,
-    member_count INTEGER,
-    description TEXT,
-    project_id INTEGER,
-    FOREIGN KEY (project_id) REFERENCES Projects(id)
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    team_name       TEXT NOT NULL,
+    lead_id         INTEGER NOT NULL,
+    member_count    INTEGER NOT NULL,
+    description     TEXT,
+    FOREIGN KEY(lead_id) REFERENCES Employees(id)
 );
 
 -- Create table for projects
-CREATE TABLE projects (
+CREATE TABLE Projects (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	client_id	    INTEGER NOT NULL,
-	permission	    TEXT,
-	address	        TEXT NOT NULL,
 	status	        TEXT NOT NULL,
-    teamwork_id         TEXT,
-	FOREIGN KEY(client_id) REFERENCES clients(id),
-    FOREIGN KEY(teamwork_id) REFERENCES teamwork(id)
+	permission	    TEXT,
+	client_id	    INTEGER NOT NULL,
+	address	        TEXT NOT NULL,
+    date            TEXT NOT NULL,
+	FOREIGN KEY(client_id) REFERENCES Clients(id)
 );
+
 
 
 
