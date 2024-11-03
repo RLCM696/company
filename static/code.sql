@@ -7,7 +7,7 @@ CREATE TABLE users (
 );
 CREATE UNIQUE INDEX username ON users(name);
 
--- Create a table for contracts
+-- Create a table for clients
 CREATE TABLE clients (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
     name            TEXT NOT NULL,
@@ -16,6 +16,7 @@ CREATE TABLE clients (
     company         TEXT
 );
 CREATE UNIQUE INDEX clientphone ON clients(phone);
+CREATE UNIQUE INDEX clientemail ON clients(email);
 
 -- Create a table for contracts
 CREATE TABLE jobs (
