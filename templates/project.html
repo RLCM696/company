@@ -5,17 +5,55 @@
 {% endblock %}
 
 {% block main %}
-<div class="card" style="width: 18rem;">
-    <p class="card-title"></p>
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="card m-3">
+    <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
+    <div class="task-amount p-2">
+        <h5>{{len(tasks)}}</h5>
     </div>
-  </div>
-
-
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead></thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Status</th>
+                        <td>{{project["status"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Permission</th>
+                        <td>{{project["permission"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contact</th>
+                        <td>{{project["client"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Company</th>
+                        <td>{{project["company"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Address</th>
+                        <td>{{project["address"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Zip code</th>
+                        <td>{{project["zip_code"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">City</th>
+                        <td>{{project["city"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">State</th>
+                        <td>{{project["state"]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Issue date</th>
+                        <td>{{project["date"]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 <div class="head bg-light">
         <h2 class="text-start">Project</h2>
