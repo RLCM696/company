@@ -21,7 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///company.db")
+db = SQL("sqlite:///arches.db")
 
 
 @app.after_request
@@ -36,8 +36,7 @@ def after_request(response):
 @app.route("/", methods=["GET"])
 @login_required
 def index():
-    contracts = db.execute("""SELECT id, address, permission, status,
-                           Clients.name AS client, Clients.company AS company FROM Projects
+    contracts = db.execute("""SELECT Projects.id, address, permission, status, name AS client, company FROM Projects
                            JOIN Clients ON Projects.client_id = Clients.id""")
 
     return render_template("index.html", contracts=contracts)

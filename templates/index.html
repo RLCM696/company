@@ -21,11 +21,11 @@
         <tbody>
                 {% for contract in contracts: %}
                     <tr>
-                        <td><a href="/contract?code={{contract['code']}}">{{ contract["code"] }}</a></td>
+                        <td><a href="/contract?code={{contract['id']}}">{{ contract["id"] }}</a></td>
                         <td>{{ contract["status"] }}</td>
                         <td>{{ contract["permission"] }}</td>
                         <td>{{ contract["company"] }}</td>
-                        <td>{{ contract["contractor"] }}</td>
+                        <td>{{ contract["client"] }}</td>
                         <td>{{ contract["address"] }}</td>
                     </tr>
                 {% endfor%}
