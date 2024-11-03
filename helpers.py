@@ -20,4 +20,4 @@ def login_required(f):
 
 def pending(value):
     # Return the number of pending tasks in a list of tasks
-    return sum([1 if val["status"] != "Completed" for val in value)
+    return sum([1 if val["status"] != "Completed" for val in value])
