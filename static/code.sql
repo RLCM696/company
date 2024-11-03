@@ -53,10 +53,13 @@ CREATE TABLE Projects (
 	permission	    TEXT,
 	client_id	    INTEGER NOT NULL,
 	address	        TEXT NOT NULL,
+    city            TEXT NOT NULL,
+    zip_code        TEXT,
+    state           TEXT,
     date            TEXT NOT NULL,
 	FOREIGN KEY(client_id) REFERENCES Clients(id)
 );
-
+CREATE UNIQUE INDEX projects_permission ON Projects(permission);
 
 
 
