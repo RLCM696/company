@@ -142,7 +142,9 @@ def logout():
 def contract():
     if request.method == "GET":
         project = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
-                           Projects.id, Clients.name AS client FROM Projects
-                           JOIN Clients ON Projects.client_id = Clients.id""")
-        return render_template("project.html", code=request.args.get('code'))
+                             Projects.id, Clients.name AS client FROM Projects
+                             JOIN Clients ON Projects.client_id = Clients.id
+                             WHERE Projects.id = ?""", request.args.get('code'))
+        tasks = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,)
+        return render_template("project.html", project = project, tasks = tasks)
 
