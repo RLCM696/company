@@ -117,18 +117,18 @@ INSERT INTO Users (name, hash) VALUES
 
 -- Insert data into Clients
 INSERT INTO Clients (name, phone, email, company) VALUES
-('ACME Corporation', '123-456-7890', 'info@acme.com', 'ACME Corporation'),
-('Globex Corporation', '098-765-4321', 'contact@globex.com', 'Globex Corporation');
+('Milton', '123-456-7890', 'info@acme.com', 'ACME Corporation'),
+('Andres', '098-765-4321', 'contact@globex.com', 'Globex Corporation');
 
 -- Insert data into Employees
 INSERT INTO Employees (first_name, last_name, phone, email, address, zip_code, hire_date, job_title, salary, status) VALUES
 ('John', 'Doe', '123-456-7890', 'john.doe@example.com', '123 Main St', '62701', '2023-01-15', 'Electrician', 55000.00, 'Active'),
-('Jane', 'Smith', '098-765-4321', 'jane.smith@example.com', '456 Elm St', '62702', '2022-07-10', 'Project Manager', 70000.00, 'Active');
+('Jane', 'Smith', '098-765-4321', 'jane.smith@example.com', '456 Elm St', '62702', '2022-07-10', 'Electrician', 70000.00, 'Active');
 
 -- Insert data into Teams
 INSERT INTO Teams (name, lead_id, member_count, description) VALUES
-('Installation Team Alpha', 1, 5, 'Responsible for all wiring and installation tasks'),
-('Inspection Team Beta', 2, 3, 'Handles all safety and final inspections');
+('Team Alpha', 1, 5, 'Responsible for all wiring and installation tasks'),
+('Team Beta', 2, 3, 'Handles all safety and final inspections');
 
 -- Insert data into Projects
 INSERT INTO Projects (status, permission, client_id, address, city, zip_code, state, DATE) VALUES
