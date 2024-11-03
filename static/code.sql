@@ -3,7 +3,6 @@ CREATE TABLE Users (
 	id	        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	name	    TEXT NOT NULL,
 	hash	    TEXT NOT NULL,
-	PRIMARY KEY(id)
 );
 CREATE UNIQUE INDEX users_name ON Users(name);
 
