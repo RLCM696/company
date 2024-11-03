@@ -5,37 +5,44 @@
 {% endblock %}
 
 {% block main %}
-    <div>
-        <h2>Project: {{ project["id"] }}</h2>
-    </div>
-    <div class="table-responsive"></div>
-    <table class=table>
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Status</th>
-                <th>Stage</th>
-                <th>Description</th>
-                <th>Team</th>
-                <th>Lead</th>
-                <th>Start date</th>
-                <th>Due date</th>
-            </tr>
-        </thead>
+    <div class="head">
+        <h2>Project</h2>
+        <br>
+        <p>Project # {{ project["id"] }}: For ({{project["company"]}}) at {{project["address"]}},
+            {{project["zip_code"]}}, {{project["city"]}}, {{project["state"]}} </p>
 
-        <tbody>
-                {% for task in tasks: %}
-                    <tr>
-                        <td>{{ task["id"] }}</td>
-                        <td>{{ task["status"] }}</td>
-                        <td>{{ task["stage"] }}</td>
-                        <td>{{ task["task"] }}</td>
-                        <td>{{ task["team"] }}</td>
-                        <td>{{ task["lead"] }}</td>
-                        <td>{{ task["start_date"] }}</td>
-                        <td>{{ task["due_date"] }}</td>
-                    </tr>
-                {% endfor%}
-        </tbody>
-    </table>
+    </div>
+    <div class="table-responsive">
+        <h2>Tasks</h2>
+        <br>
+        <table class=table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Status</th>
+                    <th>Stage</th>
+                    <th>Description</th>
+                    <th>Team</th>
+                    <th>Lead</th>
+                    <th>Start date</th>
+                    <th>Due date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                    {% for task in tasks: %}
+                        <tr>
+                            <td>{{ task["id"] }}</td>
+                            <td>{{ task["status"] }}</td>
+                            <td>{{ task["stage"] }}</td>
+                            <td>{{ task["task"] }}</td>
+                            <td>{{ task["team"] }}</td>
+                            <td>{{ task["lead"] }}</td>
+                            <td>{{ task["start_date"] }}</td>
+                            <td>{{ task["due_date"] }}</td>
+                        </tr>
+                    {% endfor%}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
