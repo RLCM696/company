@@ -18,6 +18,15 @@ CREATE TABLE clients (
 CREATE UNIQUE INDEX clientphone ON clients(phone);
 CREATE UNIQUE INDEX clientemail ON clients(email);
 
+-- Create table for person
+CREATE TABLE person (
+	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	name     	    INTEGER NOT NULL,
+	phone           TEXT NOT NULL,
+    email           TEXT,
+);
+
+
 -- Create table for jobs
 CREATE TABLE jobs (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -25,19 +34,12 @@ CREATE TABLE jobs (
 	permission	    TEXT,
 	address	        TEXT NOT NULL,
 	status	        TEXT NOT NULL,
-	FOREIGN KEY(client_id) REFERENCES clients(id)
+    teamwork_id         TEXT,
+	FOREIGN KEY(client_id) REFERENCES clients(id),
+    FOREIGN KEY(teamwork_id) REFERENCES teamwork(id)
 );
 
-CREATE TABLE Jobs (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    client_id INTEGER, start_date DATE,
-    job_title TEXT NOT NULL,
-    description TEXT NOT NULL,
-    end_date DATE, status TEXT,
-    assigned_to TEXT,
-    estimated_cost REAL,
-    actual_cost REAL,
-    FOREIGN KEY (client_id) REFERENCES ClientCompanies(id) );
+
 
 
 -- Create table for Wiring and Cabling
