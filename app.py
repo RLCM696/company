@@ -36,11 +36,11 @@ def after_request(response):
 @app.route("/", methods=["GET"])
 @login_required
 def index():
-    contracts = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
+    projects = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
                            Projects.id, Clients.name AS client FROM Projects
                            JOIN Clients ON Projects.client_id = Clients.id""")
 
-    return render_template("index.html", contracts=contracts)
+    return render_template("index.html", projects=projects)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -138,9 +138,11 @@ def logout():
     return redirect("/")
 
 
-@app.route("/contract", methods=["GET", "POST"])
+@app.route("/project", methods=["GET", "POST"])
 def contract():
     if request.method == "GET":
-
-        return render_template("contract.html", code=request.args.get('code'))
+        project = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
+                           Projects.id, Clients.name AS client FROM Projects
+                           JOIN Clients ON Projects.client_id = Clients.id""")
+        return render_template("project.html", code=request.args.get('code'))
 

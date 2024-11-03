@@ -20,16 +20,16 @@
         </thead>
 
         <tbody>
-                {% for contract in contracts: %}
+                {% for project in projects: %}
                     <tr>
-                        <td><a href="/contract?code={{contract['id']}}">{{ contract["id"] }}</a></td>
-                        <td>{{ contract["status"] }}</td>
-                        <td>{{ contract["permission"] }}</td>
-                        <td>{{ contract["client"] }}</td>
-                        <td>{{ contract["company"] }}</td>
-                        <td>{{ contract["address"] + ", " + contract["zip_code"] + ", " +
-                            contract["city"] + ", " + contract["state"] }}</td>
-                        <td>{{ contract["date"] }}</td>
+                        <td><a href="/project?code={{project['id']}}">{{ project["id"] }}</a></td>
+                        <td>{{ project["status"] }}</td>
+                        <td>{{ project["permission"] }}</td>
+                        <td>{{ project["client"] }}</td>
+                        <td>{{ project["company"] }}</td>
+                        <td>{{ project["address"] + ", " + project["zip_code"] + ", " +
+                            project["city"] + ", " + project["state"] }}</td>
+                        <td>{{ project["date"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
