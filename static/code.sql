@@ -14,16 +14,12 @@ CREATE TABLE clients (
     phone           TEXT NOT NULL,
     email           TEXT,
     company         INTEGER NOT NULL,
-    address         TEXT,
     city            TEXT,
-    state           TEXT,
-    zip_code        TEXT,
-    country         TEXT,
 );
 CREATE UNIQUE INDEX clientphone ON clients(phone);
 
 -- Create a table for contracts
-CREATE TABLE ClientContractors (
+CREATE TABLE jobs (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
     company_id      INTEGER NOT NULL,
     name            TEXT,
