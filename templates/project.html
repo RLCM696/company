@@ -7,7 +7,85 @@
 {% block main %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col d-flex">
+        <div>
+            <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
+            <div class="task-amount m-5 ">
+                <h1>To-dos</h1>
+                <h2>{{tasks | pending }}</h5>
+            </div>
+        </div>
+        <div>
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td>{{project["status"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Permission</th>
+                            <td>{{project["permission"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Issue</th>
+                            <td>{{project["date"]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Contact</th>
+                            <td>{{project["client"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Company</th>
+                            <td>{{project["company"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Phone</th>
+                            <td>{{project["phone"]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Address</th>
+                            <td>{{project["address"]}}, {{project["city"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">State</th>
+                            <td>{{project["state"]}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Zip code</th>
+                            <td>{{project["zip_code"]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+    </div>
+
+        
+
+
+
             <div class="card bg-ligth">
                 <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
                 <div class="task-amount m-5 ">
