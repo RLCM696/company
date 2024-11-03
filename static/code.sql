@@ -7,6 +7,7 @@ CREATE TABLE Users (
 );
 CREATE UNIQUE INDEX users_name ON Users(name);
 
+
 -- Create a table for clients
 CREATE TABLE Clients (
     id              INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -17,6 +18,7 @@ CREATE TABLE Clients (
 );
 CREATE UNIQUE INDEX clients_phone ON Clients(phone);
 CREATE UNIQUE INDEX clients_email ON Clients(email);
+
 
 -- Create table for person
 CREATE TABLE Employees (
@@ -35,6 +37,7 @@ CREATE TABLE Employees (
 CREATE UNIQUE INDEX employees_phone ON Employees(phone);
 CREATE UNIQUE INDEX employees_email ON Employees(email);
 
+
 -- Create the table for storing team information
 CREATE TABLE Teams (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,6 +48,7 @@ CREATE TABLE Teams (
     FOREIGN KEY(lead_id) REFERENCES Employees(id)
 );
 CREATE UNIQUE INDEX teams_name ON Teams(name);
+
 
 -- Create table for projects
 CREATE TABLE Projects (
@@ -62,6 +66,39 @@ CREATE TABLE Projects (
 CREATE UNIQUE INDEX projects_permission ON Projects(permission);
 
 
+-- Create table for Stages
+CREATE TABLE Stages (
+	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	name	        TEXT NOT NULL,
+	description	    TEXT,
+);
+CREATE UNIQUE INDEX stages_name ON Stages(name);
+
+
+-- Create table for Tasks
+CREATE TABLE Tasks (
+	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    stage_id        INTEGER NOT NULL,
+	name	        TEXT NOT NULL,
+	description	    TEXT,
+    FOREIGN KEY(stage_id) REFERENCES Stages(id)
+);
+CREATE UNIQUE INDEX tasks_name ON Tasks(name);
+
+
+-- Create the table for storing task information for specific projects
+CREATE TABLE ProjectTasks (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    task_id         INTEGER NOT NULL,
+    project_id      INTEGER NOT NULL,
+    team_id         INTEGER NOT NULL,
+    start_date      TEXT,
+    due_date        TEXT,
+    status          TEXT NOT NULL,
+    FOREIGN KEY (task_id) REFERENCES Tasks(id),
+    FOREIGN KEY (project_id) REFERENCES Projects(id),
+    FOREIGN KEY (team_id) REFERENCES Teams(id)
+);
 
 
 -- Create table for Wiring and Cabling
@@ -71,12 +108,14 @@ CREATE TABLE WiringCabling (
     description TEXT
 );
 
+
 -- Create table for Connectors and Fasteners
 CREATE TABLE ConnectorsFasteners (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
 );
+
 
 -- Create table for Conduit and Accessories
 CREATE TABLE ConduitAccessories (
@@ -85,12 +124,14 @@ CREATE TABLE ConduitAccessories (
     description TEXT
 );
 
+
 -- Create table for Electrical Boxes and Plates
 CREATE TABLE ElectricalBoxesPlates (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
 );
+
 
 -- Create table for Outlets, Switches, and Controls
 CREATE TABLE OutletsSwitchesControls (
@@ -99,12 +140,14 @@ CREATE TABLE OutletsSwitchesControls (
     description TEXT
 );
 
+
 -- Create table for Lighting
 CREATE TABLE Lighting (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
 );
+
 
 -- Create table for Circuit Breakers and Panels
 CREATE TABLE CircuitBreakersPanels (
@@ -113,12 +156,14 @@ CREATE TABLE CircuitBreakersPanels (
     description TEXT
 );
 
+
 -- Create table for Safety Devices
 CREATE TABLE SafetyDevices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
 );
+
 
 -- Create table for Tools and Safety Gear
 CREATE TABLE ToolsSafetyGear (
@@ -127,12 +172,14 @@ CREATE TABLE ToolsSafetyGear (
     description TEXT
 );
 
+
 -- Create table for Accessories
 CREATE TABLE Accessories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
 );
+
 
 -- Insert data into WiringCabling
 INSERT INTO WiringCabling (name, description) VALUES
