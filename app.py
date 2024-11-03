@@ -36,9 +36,9 @@ def after_request(response):
 @app.route("/", methods=["GET"])
 @login_required
 def index():
-    contracts = db.execute("""SELECT code, address, permission, status,
-                           contractors.name AS contractor, companies.name AS company FROM contracts
-                           JOIN contractors ON contracts.contractor_id = contractors.id
+    contracts = db.execute("""SELECT id, address, permission, status,
+                           contractors.name AS contractor, companies.name AS company FROM Projects
+                           JOIN clients ON contracts.contractor_id = contractors.id
                            JOIN companies ON contractors.company_id = companies.id""")
 
     return render_template("index.html", contracts=contracts)
@@ -75,12 +75,12 @@ def register():
         try:
             # Insert the new user into the database
             db.execute(
-                "INSERT INTO users (name, hash) VALUES (?, ?)",
+                "INSERT INTO Users (name, hash) VALUES (?, ?)",
                 request.form.get("username"),
                 generate_password_hash(request.form.get("password"))
                 )
             # Set the new user as the current logged one
-            session["user_id"] = db.execute("SELECT id FROM users WHERE name = ?", request.form.get("username"))
+            session["user_id"] = db.execute("SELECT id FROM Users WHERE name = ?", request.form.get("username"))
             return redirect("/")
 
         except ValueError as e:
@@ -122,7 +122,7 @@ def login():
 
     else:
         # If there is no user registered then the current one shuold register itself
-        if not len(db.execute("SELECT * FROM users LIMIT 1")):
+        if not len(db.execute("SELECT * FROM Users LIMIT 1")):
             return redirect("/register")
 
         return render_template("login.html")
