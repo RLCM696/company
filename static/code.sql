@@ -19,7 +19,7 @@ CREATE UNIQUE INDEX clientphone ON clients(phone);
 CREATE UNIQUE INDEX clientemail ON clients(email);
 
 -- Create table for person
-CREATE TABLE person (
+CREATE TABLE emplo (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	name     	    INTEGER NOT NULL,
 	phone           TEXT NOT NULL,
