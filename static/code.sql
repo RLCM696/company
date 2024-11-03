@@ -35,10 +35,19 @@ CREATE TABLE employees (
 CREATE UNIQUE INDEX employeesphone ON employees(phone);
 CREATE UNIQUE INDEX employeesemail ON employees(email);
 
+-- Create the table for storing team information
+CREATE TABLE WorkTeams (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    team_name TEXT NOT NULL,
+    team_lead TEXT NOT NULL,
+    member_count INTEGER,
+    description TEXT,
+    project_id INTEGER,
+    FOREIGN KEY (project_id) REFERENCES Projects(id)
+);
 
-
--- Create table for jobs
-CREATE TABLE jobs (
+-- Create table for projects
+CREATE TABLE projects (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	client_id	    INTEGER NOT NULL,
 	permission	    TEXT,
