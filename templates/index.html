@@ -12,9 +12,10 @@
                 <th>Code</th>
                 <th>Status</th>
                 <th>Permission</th>
-                <th>Company</th>
                 <th>Contractor</th>
+                <th>Company</th>
                 <th>Address</th>
+                <th>Date</th>
             </tr>
         </thead>
 
@@ -24,9 +25,10 @@
                         <td><a href="/contract?code={{contract['id']}}">{{ contract["id"] }}</a></td>
                         <td>{{ contract["status"] }}</td>
                         <td>{{ contract["permission"] }}</td>
-                        <td>{{ contract["company"] }}</td>
                         <td>{{ contract["client"] }}</td>
-                        <td>{{ contract["address"] }}</td>
+                        <td>{{ contract["company"] }}</td>
+                        <td>{{ contract["address"]  }}</td>
+                        <td>{{ contract["date"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
