@@ -145,7 +145,15 @@ INSERT INTO ProjectTasks (task_id, project_id, team_id, start_date, due_date, st
 (2, 1, 1, '06-11-2024', '10-11-2024', 'Not Started');
 
 
-
+-- On application usage
+SELECT start_date, due_date, ProjectTasks.status, ProjectTasks.id, Tasks.name AS task,
+Tasks.description, Stages.name AS stage, Teams.name AS team, Employees.first_name AS lead
+FROM ProjectTasks
+JOIN Tasks ON ProjectTasks.task_id = Tasks.id
+JOIN Stages ON Tasks.stage_id = Stages.id
+JOIN Teams ON ProjectTasks.team_id = Teams.id
+JOIN Employees ON Teams.lead_id = Employees.id
+WHERE project_id = 1;
 
 
 -- Not used yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

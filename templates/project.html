@@ -11,26 +11,27 @@
         <thead>
             <tr>
                 <th>Code</th>
+                <th>Status</th>
                 <th>Stage</th>
-                <th>Tasks</th>
+                <th>Description</th>
                 <th>Team</th>
-                <th>In charge</th>
-                <th>Address</th>
-                <th>Issue</th>
+                <th>Lead</th>
+                <th>Start date</th>
+                <th>Due date</th>
             </tr>
         </thead>
 
         <tbody>
-                {% for project in projects: %}
+                {% for task in tasks: %}
                     <tr>
-                        <td><a href="/project?project={{project['id']}}">{{ project["id"] }}</a></td>
-                        <td>{{ project["status"] }}</td>
-                        <td>{{ project["permission"] }}</td>
-                        <td>{{ project["client"] }}</td>
-                        <td>{{ project["company"] }}</td>
-                        <td>{{ project["address"] + ", " + project["zip_code"] + ", " +
-                            project["city"] + ", " + project["state"] }}</td>
-                        <td>{{ project["date"] }}</td>
+                        <td>{{ task["id"] }}</td>
+                        <td>{{ task["status"] }}</td>
+                        <td>{{ task["stage"] }}</td>
+                        <td>{{ task["task"] }}</td>
+                        <td>{{ task["team"] }}</td>
+                        <td>{{ task["lead"] }}</td>
+                        <td>{{ task["start"] }}</td>
+                        <td>{{ task["due"] }}</td>
                     </tr>
                 {% endfor%}
         </tbody>
