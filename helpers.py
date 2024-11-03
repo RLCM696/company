@@ -19,7 +19,5 @@ def login_required(f):
     return decorated_function
 
 def pending(value):
-    # Return the lenght of a list
-    count = 0
-    count ++ if val["status"] != "Completed" for val in value
-    return
+    # Return the number of pending tasks in a list of tasks
+    return sum([1 if val["status"] != "Completed" for val in value)
