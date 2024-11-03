@@ -15,7 +15,7 @@
                 <th>Contractor</th>
                 <th>Company</th>
                 <th>Address</th>
-                <th>Date</th>
+                <th>Issue</th>
             </tr>
         </thead>
 
@@ -27,7 +27,8 @@
                         <td>{{ contract["permission"] }}</td>
                         <td>{{ contract["client"] }}</td>
                         <td>{{ contract["company"] }}</td>
-                        <td>{{ contract["address"]  }}</td>
+                        <td>{{ contract["address"] + ", " + contract["zip_code"] + ", " +
+                            contract["city"] + ", " + contract["state"] }}</td>
                         <td>{{ contract["date"] }}</td>
                     </tr>
                 {% endfor%}
