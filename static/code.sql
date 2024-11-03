@@ -22,9 +22,9 @@ CREATE UNIQUE INDEX clientemail ON clients(email);
 CREATE TABLE jobs (
 	id	            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	client_id	    INTEGER NOT NULL,
+	permission	    TEXT,
 	address	        TEXT NOT NULL,
-	"permission"	TEXT,
-	"status"	TEXT NOT NULL,
+	status	        TEXT NOT NULL,
 	FOREIGN KEY(client_id) REFERENCES clients(id)
 );
 
