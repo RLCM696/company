@@ -75,7 +75,7 @@ def register():
         try:
             # Insert the new user into the database
             db.execute(
-                "INSERT INTO users (username, hash) VALUES (?, ?)",
+                "INSERT INTO users (name, hash) VALUES (?, ?)",
                 request.form.get("username"),
                 generate_password_hash(request.form.get("password"))
                 )
@@ -108,7 +108,7 @@ def login():
             return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
 
         # Checking the user data
-        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        user = db.execute("SELECT * FROM users WHERE name = ?", request.form.get("username"))
         if not len(user):
             flash("The given username or password are not registered")
             return render_template("register.html", username=request.form.get("username"), password=request.form.get("password"))
@@ -142,6 +142,6 @@ def logout():
 @app.route("/contract", methods=["GET", "POST"])
 def contract():
     if request.method == "GET":
-        
+
         return render_template("contract.html", code=request.args.get('code'))
 
