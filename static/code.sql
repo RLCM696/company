@@ -61,7 +61,7 @@ CREATE TABLE
         city TEXT NOT NULL,
         zip_code TEXT,
         state TEXT NOT NULL,
-        DATE TEXT NOT NULL,
+        date TEXT NOT NULL,
         FOREIGN KEY (client_id) REFERENCES Clients (id)
     );
 CREATE UNIQUE INDEX projects_permission ON Projects (permission);
