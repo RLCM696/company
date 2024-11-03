@@ -6,14 +6,100 @@
 
 {% block main %}
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h6 style="text-align: center">Project # {{project["id"]}}</h6>
-            <div>
-                <h1>To-dos</h1>
-                <h2>{{tasks | pending }}</h5>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <h6 style="text-align: center">Project # {{project["id"]}}</h6>
+                <div>
+                    <h1>To-dos</h1>
+                    <h2>{{tasks | pending }}</h5>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table-borderless">
+                                <thead></thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-start">Status</th>
+                                        <td class="text-end">{{project["status"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Permission</th>
+                                        <td class="text-end">{{project["permission"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Issue</th>
+                                        <td class="text-end">{{project["date"]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table class="table-borderless">
+                                <thead></thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-start">Status</th>
+                                        <td class="text-end">{{project["status"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Permission</th>
+                                        <td class="text-end">{{project["permission"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Issue</th>
+                                        <td class="text-end">{{project["date"]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table class="table-borderless">
+                                <thead></thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-start">Status</th>
+                                        <td class="text-end">{{project["status"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Permission</th>
+                                        <td class="text-end">{{project["permission"]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start">Issue</th>
+                                        <td class="text-end">{{project["date"]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- <table class="table-borderless">
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-start">Status</th>
+                                <td class="text-end">{{project["status"]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Permission</th>
+                                <td class="text-end">{{project["permission"]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Issue</th>
+                                <td class="text-end">{{project["date"]}}</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
             </div>
         </div>
+    </div>
+    <!-- <div class="row">
+
         <div class="col">
             <table class="table-borderless">
                 <thead></thead>
@@ -71,7 +157,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="table-responsive">
