@@ -55,7 +55,7 @@ CREATE TABLE Projects (
 	address	        TEXT NOT NULL,
     city            TEXT NOT NULL,
     zip_code        TEXT,
-    state           TEXT,
+    state           TEXT NOT NULL,
     date            TEXT NOT NULL,
 	FOREIGN KEY(client_id) REFERENCES Clients(id)
 );
