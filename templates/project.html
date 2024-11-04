@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
                 <div class="task-amount m-5 ">
                     <h1>To-dos</h1>
@@ -22,15 +22,15 @@
                         <tbody>
                             <tr>
                                 <th scope="row" class="text-start">Status</th>
-                                <td class="text-end">{{project["status"]}}</td>
+                                <td class="text-start">{{project["status"]}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">Permission</th>
-                                <td class="text-end">{{project["permission"]}}</td>
+                                <td class="text-start">{{project["permission"]}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" class="text-start">Issue</th>
-                                <td class="text-end">{{project["date"]}}</td>
+                                <td class="text-start">{{project["date"]}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -40,16 +40,16 @@
                         <thead></thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Contact</th>
-                                <td>{{project["client"]}}</td>
+                                <th scope="row" class="text-start">Contact</th>
+                                <td class="text-start">{{project["client"]}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Company</th>
-                                <td>{{project["company"]}}</td>
+                                <th scope="row" class="text-start">Company</th>
+                                <td class="text-start">{{project["company"]}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Phone</th>
-                                <td>{{project["phone"]}}</td>
+                                <th scope="row" class="text-start">Phone</th>
+                                <td class="text-start">{{project["phone"]}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -59,16 +59,16 @@
                         <thead></thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Address</th>
-                                <td>{{project["address"]}}, {{project["city"]}}</td>
+                                <th scope="row" class="text-start">Address</th>
+                                <td class="text-start">{{project["address"]}}, {{project["city"]}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">State</th>
-                                <td>{{project["state"]}}</td>
+                                <th scope="row" class="text-start">State</th>
+                                <td class="text-start">{{project["state"]}}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Zip code</th>
-                                <td>{{project["zip_code"]}}</td>
+                                <th scope="row" class="text-start">Zip code</th>
+                                <td class="text-start">{{project["zip_code"]}}</td>
                             </tr>
                         </tbody>
                     </table>
