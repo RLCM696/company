@@ -17,47 +17,51 @@
             <div class="col-md-10">
                 <div class="card-body ">
                     <div class="row">
-                        <div class="col d-flex justify-content-center" style="width=200em">
-                            <p>Status</p>
-                            <p>{{project["status"]}}</p>
+                        <div class="col">
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p class="text-start">Status</p>
+                                <p class="text-start">{{project["status"]}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p class="text-start">Permission</p>
+                                <p class="text-start">{{project["permission"]}}</p>
+                            </div>
+                            <div class="justify-content-center" style="width=200em">
+                                <p class="text-start">Issue</p>
+                                <p class="text-start">{{project["date"]}}</p>
+                            </div>
                         </div>
-                        <div class="col d-flex justify-content-center" style="width=200em">
-                            <p>Permission</p>
-                            <p>{{project["permission"]}}</p>
+                        <div class="col">
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p class="text-start">Contact</p>
+                                <p class="text-start">{{project["client"]}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p class="text-start">Company</p>
+                                <p class="text-start">{{project["company"]}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p>Phone</p>
+                                <p>{{project["phone"]}}</p>
+                            </div>
                         </div>
-                        <div class="col d-flex justify-content-center" style="width=200em">
-                            <p>Issue</p>
-                            <p>{{project["date"]}}</p>
+                        <div class="col">
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <p>Address</p>
+                                <p>{{project["address"]}}, {{project["city"]}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <h6>State</h6>
+                                <p>{{project["state"]}}</p>
+                            </div>
+                            <div class="d-flex justify-content-center" style="width=200em">
+                                <h6>Zip code</h6>
+                                <p>{{project["zip_code"]}}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col d-flex justify-content-center">
-                            <h6>Contact</h6>
-                            <p>{{project["client"]}}</p>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <h6>Company</h6>
-                            <p>{{project["company"]}}</p>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <h6>Phone</h6>
-                            <p>{{project["phone"]}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col d-flex justify-content-center">
-                            <h6>Address</h6>
-                            <p>{{project["address"]}}, {{project["city"]}}</p>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <h6>State</h6>
-                            <p>{{project["state"]}}</p>
-                        </div>
-                        <div class="col d-flex justify-content-center">
-                            <h6>Zip code</h6>
-                            <p>{{project["zip_code"]}}</p>
-                        </div>
-                    </div>
+
+
 
                     <!-- <table class="table-borderless">
                         <thead></thead>
