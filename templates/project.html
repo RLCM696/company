@@ -7,15 +7,15 @@
 {% block main %}
 <div class="container-fluid">
     <div class="card mb-3">
+        <h6 class="card-title p-2">Project # {{project["id"]}}</h6>
         <div class="row g-0">
-            <div class="col-md-4">
-                <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
+            <div class="col-md-3">
                 <div class="task-amount m-5 ">
-                    <h1>To-dos</h1>
-                    <h2>{{tasks | pending }}</h5>
+                    <h4>Total tasks</h4>
+                    <h1>{{tasks | pending }}</h1>
                 </div>
             </div>
-            <div class="col-md-8 card-body">
+            <div class="col-md-9 card-body">
                 <div class="row">
                     <div class="col">
                         <table class="table table-borderless">
