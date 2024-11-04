@@ -9,8 +9,13 @@
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-2">
-
+                <h6 class="card-title p-2" style="text-align: center">Project # {{project["id"]}}</h6>
+                <div class="task-amount m-5 ">
+                    <h1>To-dos</h1>
+                    <h2>{{tasks | pending }}</h5>
+                </div>
             </div>
+            
         </div>
     </div>
     <div class="row">
