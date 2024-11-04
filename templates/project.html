@@ -6,15 +6,15 @@
 
 {% block main %}
 <div class="container-fluid">
-    <div class="card mb-3">
+    <div class="card bg-light mb-3">
         <h6 class="card-title">Project # {{project["id"]}}</h6>
         <div class="row g-0">
             <div class="col-md-2 align-self-center">
                 <h4>Total tasks</h4>
                 <h2>{{tasks | pending }}</h2>
             </div>
-            <div class="col-md-10">
-                <div class="card-body">
+            <div class="col-md-10 bg-light">
+                <div class="card-body bg-light">
                     <div class="row">
                         <div class="col table-responsive align-self-center">
                             <table class="table table-borderless">
