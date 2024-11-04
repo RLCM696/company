@@ -17,66 +17,32 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <div class="card-body  align-self-center">
-                        <div class="row ">
-                            <div class="col">
-                                <table class="table table-borderless">
-                                    <thead></thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row" class="text-start">Status</th>
-                                            <td class="text-start">{{project["status"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">Permission</th>
-                                            <td class="text-start">{{project["permission"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">Issue</th>
-                                            <td class="text-start">{{project["date"]}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col">
-                                <table class="table table-borderless">
-                                    <thead></thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row" class="text-start">Contact</th>
-                                            <td class="text-start">{{project["client"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">Company</th>
-                                            <td class="text-start">{{project["company"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">Phone</th>
-                                            <td class="text-start">{{project["phone"]}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col">
-                                <table class="table table-borderless">
-                                    <thead></thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row" class="text-start">Address</th>
-                                            <td class="text-start">{{project["address"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">City</th>
-                                            <td class="text-start">{{project["city"]}}, {{project["state"]}}</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" class="text-start">Zip code</th>
-                                            <td class="text-start">{{project["zip_code"]}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="card-body">
+                        <table class="table table-borderless">
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="text-start">Status</th>
+                                    <td class="text-start">{{project["status"]}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-start">Permission</th>
+                                    <td class="text-start">{{project["permission"]}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-start">Issue</th>
+                                    <td class="text-start">{{project["date"]}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-start">Contact</th>
+                                    <td class="text-start">{{project["client"]}} ({{project["phone"]}})</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text-start">Address</th>
+                                    <td class="text-start">{{project["address"]}}, {{project["city"]}}, {{project["state"]}}, ({{project["zip_code"]}})</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
