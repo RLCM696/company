@@ -35,9 +35,8 @@ def after_request(response):
 @login_required
 def index():
     projects = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
-                           Projects.id, Clients.name AS client FROM Projects
-                           JOIN Clients ON Projects.client_id = Clients.id""")
-
+                        Projects.id, Clients.name AS client FROM Projects
+                        JOIN Clients ON Projects.client_id = Clients.id""")
     return render_template("index.html", projects=projects)
 
 
@@ -139,7 +138,7 @@ def logout():
 
 
 @app.route("/project", methods=["GET", "POST"])
-def contract():
+def project():
     if request.method == "GET":
         project = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
                              Projects.id, Clients.name AS client FROM Projects
