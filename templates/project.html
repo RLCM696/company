@@ -48,42 +48,6 @@
             </div>
         </div>
     </div>
-
-    <div class="row m-3">
-        <h2 class="text-start">Tasks</h2>
-        <hr>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Status</th>
-                        <th>Stage</th>
-                        <th>Description</th>
-                        <th>Team</th>
-                        <th>Lead</th>
-                        <th>Start date</th>
-                        <th>Due date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                        {% for task in tasks: %}
-                            <tr>
-                                <td>{{ task["id"] }}</td>
-                                <td>{{ task["status"] }}</td>
-                                <td>{{ task["stage"] }}</td>
-                                <td>{{ task["task"] }}</td>
-                                <td>{{ task["team"] }}</td>
-                                <td>{{ task["lead"] }}</td>
-                                <td>{{ task["start_date"] }}</td>
-                                <td>{{ task["due_date"] }}</td>
-                            </tr>
-                        {% endfor%}
-                </tbody>
-            </table>
-        </div>
-    </div>
 </div>
 {% endblock %}
 
