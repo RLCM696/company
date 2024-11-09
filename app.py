@@ -118,6 +118,8 @@ def login():
         return redirect("/")
 
     else:
+        session.clear()
+
         # If there is no user registered then the current one shuold register itself
         if not len(db.execute("SELECT * FROM Users LIMIT 1")):
             return redirect("/register")
