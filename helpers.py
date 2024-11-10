@@ -25,8 +25,8 @@ def pending(value: list[dict]):
 
 def date_tool(value: str):
     # Convert string to datetime object
-    date_obj = datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
+    date_obj = datetime.strptime(value, "%m-%d-%Y")
 
     # Convert datetime object to different format
-    new_date_str = date_obj.strftime("%d/%m/%Y %I:%M %p")
+    new_date_str = date_obj.strftime("%m/%d/%Y")
     return
