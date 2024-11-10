@@ -37,7 +37,7 @@
                                     <p class="m-1">{{ project["address"] }} {{ project["city"] }}, {{ project["zip_code"]}} {{ project["state"] }}</p>
                                 </div>
                             </div>
-                            <p class="card-text mt-2"><small class="text-muted">Added on {{ project["date"] }}</small></p>
+                            <p class="card-text mt-2"><small class="text-muted">Added on {{ project["date"] | date }}</small></p>
                         </div>
                     </div>
                 </div>
