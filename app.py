@@ -141,7 +141,7 @@ def logout():
 def project():
     if request.method == "GET":
         project = db.execute("""SELECT status, permission, company, address, zip_code, city, state, date,
-                             Projects.id, Clients.name AS client FROM Projects
+                             Projects.id, Clients.phone, Clients.name AS client FROM Projects
                              JOIN Clients ON Projects.client_id = Clients.id
                              WHERE Projects.id = ?""", request.args.get('project'))[0]
 

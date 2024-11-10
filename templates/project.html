@@ -6,22 +6,38 @@
 
 {% block main %}
 <div class="container-fluid">
-    <div class="row">
-        <div class="col m-2 p-0">
+    <div class="row m-0">
+        <div class="col m-1 p-0">
             <div class="card">
-                <div class="row">
-                    <div class="col align-self-center" style="max-width: 200px">
-                        <div>
-                            <h3>TO-DO:</h3>
+                <div class="row m-0">
+                    <div class="col border border-top-0 border-start-0 border-bottom-0 align-content-center flex-wrap justify-content-center" style="max-width: 150px">
+                        <div class="ml-2">
+                            <h3>TO-DO</h3>
                             <h1>{{tasks | pending }}</h1>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col bg-light" style="border-radius: .25em">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 class="card-title">Project #{{project["id"]}}</h5>
+                            <div class="row">
+                                <div class="col bg-white border align-content-center flex-wrap justify-content-center m-1" style="border-radius: .25em">
+                                    <p class="m-1"><b>Status</b></p>
+                                    <p class="m-1">{{ project["status"] }}</p>
+                                </div>
+                                <div class="col bg-white border align-content-center flex-wrap justify-content-center m-1" style="border-radius: .25em">
+                                    <p class="m-1"><b>Permission</b></p>
+                                    <p class="m-1">{{ project["permission"] }}</p>
+                                </div>
+                                <div class="col bg-white border align-content-center flex-wrap justify-content-center m-1" style="border-radius: .25em">
+                                    <p class="m-1"><b>Contact</b></p>
+                                    <p class="m-1">{{ project["client"] }} ({{ project["phone"] }}) {{ project["company"] }}</p>
+                                </div>
+                                <div class="col bg-white border align-content-center flex-wrap justify-content-center m-1" style="border-radius: .25em">
+                                    <p class="m-1"><b>Address</b></p>
+                                    <p class="m-1">{{ project["address"] }} {{ project["city"] }}, {{ project["zip_code"]}} {{ project["state"] }}</p>
+                                </div>
+                            </div>
+                            <p class="card-text mt-2"><small class="text-muted">Added on {{ project["date"] }}</small></p>
                         </div>
                     </div>
                 </div>
@@ -29,9 +45,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row m-0">
         {% for (title, status) in [("To-do", "Not Started"), ("Started", "Started"), ("Finished", "Finished")]: %}
-            <div class="col m-2 bg-light border" style="border-radius: .50em">
+            <div class="col m-1 mt-3 bg-light border" style="border-radius: .50em">
                 <p class="mt-2">{{title}}</p>
                 {% for task in tasks: %}
                     {% if task ["status"] == status: %}
